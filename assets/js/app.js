@@ -16,7 +16,7 @@ function myFunction() {
 	document.getElementById("myDropdown").classList.toggle("show");
 }
 window.addEventListener('load',function() {
-	//login();
+	login();
 });
 
 function enviar(f){
