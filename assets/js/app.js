@@ -6,7 +6,7 @@ var coders = [ { nombre : "Meche", apellido : "Zubieta",  promocion : "1era. pro
 			 { nombre : "Daniella", apellido : "Durán",  promocion : "4ta. promoción", estado : "Trabajando" },
 			 { nombre : "Michelle", apellido : "Seguil",  promocion : "5ta. promoción", estado : "Trabajando" },
 			 { nombre : "Diana", apellido : "Navarro",  promocion : "5ta. promoción", estado : "Trabajando" } ];
-login();
+var respuestas =[{p1 : 'p1' , p2 : 'p2' , p3 : 'p2'},{p1 : 'p1' , p2 : 'p2' , p3 : 'p2'},{p1 : 'p1' , p2 : 'p2' , p3 : 'p2'}]
 function login(){
 	var nombre = prompt("Cual es Nombre");
 	document.getElementById('nombre').innerHTML = "Hola coder "+ nombre;
@@ -15,7 +15,25 @@ function login(){
 function myFunction() {
 	document.getElementById("myDropdown").classList.toggle("show");
 }
+window.addEventListener('load',function() {
+	//login();
+});
 
+function enviar(f){
+	var ckbox = document.getElementsByName('p1');
+	var res = ckbox.checked();
+	console.log(res);
+	if(true){
+
+	}
+	var ok = 0;
+	ckbox.map(e => e.checked == true ? ok = 1 : ok);
+	if(ok == 0){
+		alert('Responda todas las preguntas');
+		return 0;
+	}
+
+}
 window.onclick = function(event) {
 	if (!event.target.matches('.dropbtn')) {
 

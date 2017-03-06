@@ -6,9 +6,9 @@
 	<link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
-	<header>1
+	<header>
 		<div class="dropdown"><span id = "nombre" value = ""></span>
-		<button onclick="myFunction()" class="dropbtn">&#9776;</button>
+		<button onclick="myFunction();return false;" class="dropbtn">&#9776;</button>
 		<div id="myDropdown" class="dropdown-content">
 		<a href="#">Perfil</a>
 		<a href="#l">Salir</a>
@@ -29,27 +29,50 @@
 	<br/>
 		<div id="text1"><b>Sprint 1 Introducción al Desarrollo Web </b>
 			<ol>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
+				<li>Fundamentos de Programacion</li>
+				<li>Funciones</li>
+				<li>Arreglos</li>
+				<li>Objetos</li>
 			</ol>
+			<hr>
+			<h3><b>Quiz</b></h3>
+			<form id = "form1" action="" onsubmit="enviar(this); return false;">
+				<div id = "1">
+				<h4>¿Cual es tu comando para iniciar un repositorio desde la consola?</h4>
+					<input type="radio" id = "a" name = "p1" value="a" > git init<br>
+					<input type="radio" id = "b" name = "p1" value="b"> git init .<br>
+					<input type="radio" id = "c" name = "p1" value="c"> git add init  
+				</div>
+				<div id = "2">
+					<h4>¿Cual es la finalidad de hacer una prueba unitaria?</h4>
+					<input type="radio" id = "a" value="a"> Comparar que el codigo funciona correctamente<br>
+					<input type="radio" id = "b" value="b"> Darle valores a los parametros de dichas fucniones<br>
+					<input type="radio" id = "c" value="c"> No tiene ningún fin 
+				</div> 
+				<div id = "2">
+					<h4>¿Que significa DOM?</h4>
+					<input type="radio" id = "a" value="a">Dual Object Model<br>
+					<input type="radio" id = "b" value="b"> Document Object Model<br>
+					<input type="radio" id = "c" value="c"> Document Obsolet Model
+				</div> 
+				<br>
+				<button class="" type="submit">Enviar</button>
+			</form>
 		</div>
 		<div id="text2"><b>Sprint 2 Introducción al Desarrollo Web </b>
 			<ol>
 				<li></li>
 				<li></li>
 				<li></li>
-			</ol>
+			</ol><hr>
+			<h3><b>Quiz</b></h3>
+			<h4>¿Cual es tu comando para iniciar un repositorio desde la consola?</h4>
+				<input type="radio" id = "" value="a"> git init<br>
+				<input type="radio" id = "" value="b"> git init .<br>
+				<input type="radio" id = "" value="c"> git add init   
 		</div>
 		<div id="text3"><b>Sprint 3 Introducción al Desarrollo Web </b>
-			<ol>
-				<li></li>
-				<li></li>
-				<li></li>
-			</ol>
+			<h4>Todavía no hay contenido</h4>  
 		</div>
 	<script src = "assets/js/app.js"></script>
 	
