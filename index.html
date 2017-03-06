@@ -35,28 +35,29 @@
 				<li>Objetos</li>
 			</ol>
 			<hr>
+			<div id = "records"></div>
 			<h3><b>Quiz</b></h3>
-			<form id = "form1" action="" onsubmit="enviar(this); return false;">
-				<div id = "1">
-				<h4>¿Cual es tu comando para iniciar un repositorio desde la consola?</h4>
-					<input type="radio" id = "a" name = "p1" value="a" > git init<br>
-					<input type="radio" id = "b" name = "p1" value="b"> git init .<br>
-					<input type="radio" id = "c" name = "p1" value="c"> git add init  
+			<form id = "form1" action="" onsubmit="validar(this); return false;">
+				<div id = "">
+				<h4>¿Existen dos tipos de funciones?</h4>
+					<input type="radio" id = "a" name = "p1" class = "p2" value="" > Expresadas y declaradas<br>
+					<input type="radio" id = "b" name = "p1" class = "p2" value=""> Explicitas y declaradas<br>
+					<input type="radio" id = "c" name = "p1" class = "p2" value=""> Expresadas y rerivadas  
 				</div>
-				<div id = "2">
-					<h4>¿Cual es la finalidad de hacer una prueba unitaria?</h4>
-					<input type="radio" id = "a" value="a"> Comparar que el codigo funciona correctamente<br>
-					<input type="radio" id = "b" value="b"> Darle valores a los parametros de dichas fucniones<br>
-					<input type="radio" id = "c" value="c"> No tiene ningún fin 
+				<div id = "">
+					<h4>Elige una propiedad de los arreglos</h4>
+					<input type="radio" id = "a" name = "p2" class = "p2" value=""> clear<br>
+					<input type="radio" id = "b" name = "p2" class = "p2" value=""> pop<br>
+					<input type="radio" id = "c" name = "p2" class = "p2" value=""> add 
 				</div> 
-				<div id = "2">
-					<h4>¿Que significa DOM?</h4>
-					<input type="radio" id = "a" value="a">Dual Object Model<br>
-					<input type="radio" id = "b" value="b"> Document Object Model<br>
-					<input type="radio" id = "c" value="c"> Document Obsolet Model
+				<div id = "">
+					<h4>Un objeto tiene ------ y-------</h4>
+					<input type="radio" id = "a" name = "p3" class = "p2" value="">numeros y letras<br>
+					<input type="radio" id = "b" name = "p3" class = "p2" value=""> partes y validacione<br>
+					<input type="radio" id = "c" name = "p3" class = "p2" value=""> propieades y valores
 				</div> 
 				<br>
-				<button class="" type="submit">Enviar</button>
+				<button class="" type="submit" onclick="enviar('p2');return false;">Enviar</button><br>
 			</form>
 		</div>
 		<div id="text2"><b>Sprint 2 Introducción al Desarrollo Web </b>
@@ -65,11 +66,30 @@
 				<li></li>
 				<li></li>
 			</ol><hr>
+			<div id = "records2"></div>
 			<h3><b>Quiz</b></h3>
-			<h4>¿Cual es tu comando para iniciar un repositorio desde la consola?</h4>
-				<input type="radio" id = "" value="a"> git init<br>
-				<input type="radio" id = "" value="b"> git init .<br>
-				<input type="radio" id = "" value="c"> git add init   
+		<form id = "form2" action="" onsubmit="validar(this); return false;">
+				<div id = "1">
+				<h4>¿Cual es tu comando para iniciar un repositorio desde la consola?</h4>
+					<input type="radio" id = "a" name = "p1" class = "p1" value="" > git init<br>
+					<input type="radio" id = "b" name = "p1" class = "p1" value=""> git init .<br>
+					<input type="radio" id = "c" name = "p1" class = "p1" value=""> git add init  
+				</div>
+				<div id = "2">
+					<h4>¿Cual es la finalidad de hacer una prueba unitaria?</h4>
+					<input type="radio" id = "a" name = "p2" class = "p1" value=""> Comparar que el codigo funciona correctamente<br>
+					<input type="radio" id = "b" name = "p2" class = "p1" value=""> Darle valores a los parametros de dichas fucniones<br>
+					<input type="radio" id = "c" name = "p2" class = "p1" value=""> No tiene ningún fin 
+				</div> 
+				<div id = "2">
+					<h4>¿Que significa DOM?</h4>
+					<input type="radio" id = "a" name = "p3" class = "p1" value="">Dual Object Model<br>
+					<input type="radio" id = "b" name = "p3" class = "p1" value=""> Document Object Model<br>
+					<input type="radio" id = "c" name = "p3" class = "p1" value=""> Document Obsolet Model
+				</div> 
+				<br>
+				<button class="" type="submit" onclick="enviar('p1');return false;">Enviar</button><br><br>
+			</form>
 		</div>
 		<div id="text3"><b>Sprint 3 Introducción al Desarrollo Web </b>
 			<h4>Todavía no hay contenido</h4>  

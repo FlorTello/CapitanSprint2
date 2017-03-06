@@ -1,26 +1,5 @@
-function mostrarDatos(){
-	var coders = [ { nombre : "Meche", apellido : "Zubieta",  promocion : "1era. promoción", estado : "Trabajando" },
-			 { nombre : "Arabela", apellido : "Rojas", promocion : "2da. promoción", estado : "Trabajando" },
-			 { nombre : "Maria", apellido : "Rosán",  promocion : "2da. promoción", estado : "Trabajando" },
-			 { nombre : "Guadalupe", apellido : "Racio",  promocion : "3era. promoción", estado : "Trabajando" },
-			 { nombre : "Sara", apellido : "Casa",  promocion : "3era. promoción", estado : "Trabajando" },
-			 { nombre : "Daniella", apellido : "Durán",  promocion : "4ta. promoción", estado : "Trabajando" },
-			 { nombre : "Michelle", apellido : "Seguil",  promocion : "5ta. promoción", estado : "Trabajando" },
-			 { nombre : "Diana", apellido : "Navarro",  promocion : "5ta. promoción", estado : "Trabajando" } ];
 
-	var mostrar = "<ul>";
-	coders.forEach(function(e){
-		mostrar += "<div class = 'div-coder'><li> Nombre: "+e.nombre+"<br /></li>"+
-				   "<li>Apellido: "+e.apellido+"<br /></li>"+
-				   "<li>Promoción: "+e.promocion+"<br /></li>"+
-				   "<li>Estado: "+e.estado+"<br /></li></div>";
-	});
-	mostrar += "</ul>";
-	document.write(mostrar);
-}
-mostrarDatos();
-
-var respuestas =[{p1 : 'p1' , p2 : 'p2' , p3 : 'p2'},{p1 : 'p1' , p2 : 'p2' , p3 : 'p2'},{p1 : 'p1' , p2 : 'p2' , p3 : 'p2'}]
+var respuestas =[['a','b','b'],['a','b','c']];
 function login(){
 	var nombre = prompt("Cual es Nombre");
 	document.getElementById('nombre').innerHTML = "Hola coder "+ nombre;
@@ -33,20 +12,48 @@ window.addEventListener('load',function() {
 	login();
 });
 
-function enviar(f){
-	var ckbox = document.getElementsByName('p1');
-	var res = ckbox.checked();
-	console.log(res);
-	if(true){
-
+function validar(sprint){
+	var k = 0;
+	var radios = document.getElementsByClassName(sprint);
+	for (var i = 0 ; i < radios.length; i++) {
+		if(radios[i].checked == true){
+			k = 1;
+		}
 	}
-	var ok = 0;
-	ckbox.map(e => e.checked == true ? ok = 1 : ok);
-	if(ok == 0){
-		alert('Responda todas las preguntas');
-		return 0;
+	if(k == 0){
+		alert("Marque una respuesta en la pregunta 1");
+		document.getElementById("1").focus();
 	}
+}
 
+function enviar(sprint){
+	var correctas = 0;
+	var respuesta = [];
+	var test ;
+	var radios = document.getElementsByClassName(sprint);
+	for (var i = 0 ; i < radios.length; i++) {
+		if(radios[i].checked == true ){
+			respuesta.push(radios[i].id);
+		}
+	}
+	console.log(respuesta);
+	if(sprint == "p1"){
+		test = respuestas[0];
+	}
+	if(sprint == "p2"){
+		test = respuestas[0];
+	}
+	for (var i = 0 ; i < 3; i++) {
+		if(respuesta[i] === test[0][i]){
+			correctas ++;
+		}
+	}
+	document.getElementById('form1').style.display = "none";
+	document.getElementById('records').innerHTML = "Tienes "+ correctas + " correctas";
+	document.getElementById('records2').innerHTML = "Tienes "+ correctas + " correctas";
+	limpiar(sprint);
+	console.log(correctas);
+	correctas = 0;
 }
 window.onclick = function(event) {
 	if (!event.target.matches('.dropbtn')) {
@@ -62,7 +69,19 @@ window.onclick = function(event) {
 	}
 }
 
+function limpiar(quiz){
+	var radios  = document.getElementsByClassName(quiz);
+	console.log(radios);
+	for (var i = 0 ; i < radios.length ; i++) {
+		radios[i].checked = false;
+	}
+
+}
+
 var mostarOcultar = function(divtexte) {
+	document.getElementById('form1').style.display = "block";
+	document.getElementById('form2').style.display = "block";
+	document.getElementById('records').innerHTML = "";
 	var divtext = document.getElementById(divtexte);
 	if (divtext.id == "text1" ) {
 		divtext.style.display = "block";
@@ -73,7 +92,7 @@ var mostarOcultar = function(divtexte) {
 		document.getElementById('text1').style.display = "none";
 		document.getElementById('text3').style.display = "none"
 	}
-	else{
+	else {
 		divtext.style.display = "block";
 		document.getElementById('text1').style.display = "none";
 		document.getElementById('text2').style.display = "none"
